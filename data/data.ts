@@ -1,29 +1,29 @@
 export type MassData = {
-  massValue: Number;
-  massExponent: Number;
+  massValue: number;
+  massExponent: number;
 };
 
 export type VolData = {
-  volValue: Number;
-  volExponent: Number;
+  volValue: number;
+  volExponent: number;
 };
 
 export type Planet = {
-  id: String;
-  name: String;
+  id: string;
+  name: string;
   isPlanet: Boolean;
   mass: MassData;
   vol: VolData;
-  gravity: Number;
-  avgTemp: Number;
-  moonsCount: Number;
-  moons: String[];
+  gravity: number;
+  avgTemp: number;
+  moonsCount: number;
+  moons: string[];
 };
 
 export type Asteroid = {
-  name: String;
-  discoveryYear: Number;
-  orbitalPeriod: Number;
+  name: string;
+  discoveryYear: number;
+  orbitalPeriod: number;
 };
 
 export type AllData = {
