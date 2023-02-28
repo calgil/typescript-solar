@@ -1,3 +1,36 @@
+export type MassData = {
+  massValue: Number;
+  massExponent: Number;
+};
+
+export type VolData = {
+  volValue: Number;
+  volExponent: Number;
+};
+
+export type Planet = {
+  id: String;
+  name: String;
+  isPlanet: Boolean;
+  mass: MassData;
+  vol: VolData;
+  gravity: Number;
+  avgTemp: Number;
+  moonsCount: Number;
+  moons: String[];
+};
+
+export type Asteroid = {
+  name: String;
+  discoveryYear: Number;
+  orbitalPeriod: Number;
+};
+
+export type AllData = {
+  planets: Planet[];
+  asteroids: Asteroid[];
+};
+
 export const data = {
   planets: [
     {
