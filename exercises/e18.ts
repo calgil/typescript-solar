@@ -3,7 +3,21 @@
 // Return example: 1902
 // Hint: use a Map data structure instead of an object if you want typescript to be happy
 
-export function getGreatestDiscoveryYear(asteroids) {}
+import { Asteroid } from "../data/data";
+
+export function getGreatestDiscoveryYear(asteroids: Asteroid[]) {
+  const discoveryYears = new Map();
+  asteroids.map((asteroid) => {
+    if (!discoveryYears.has(asteroid.discoveryYear)) {
+      discoveryYears.set(asteroid.discoveryYear, 1);
+    } else {
+      const years = discoveryYears.get(asteroid.discoveryYear);
+      discoveryYears.set(asteroid.discoveryYear, years + 1);
+    }
+  });
+  //   need to handle undefined!!
+  return [...discoveryYears.entries()].sort((a, b) => b[1] - a[1])[0][0];
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"
