@@ -15,8 +15,11 @@ export function getGreatestDiscoveryYear(asteroids: Asteroid[]) {
       discoveryYears.set(asteroid.discoveryYear, years + 1);
     }
   });
-  //   need to handle undefined!!
-  return [...discoveryYears.entries()].sort((a, b) => b[1] - a[1])[0][0];
+  const sortedYears = [...discoveryYears.entries()].sort((a, b) => b[1] - a[1]);
+  if (!sortedYears[0]) {
+    return null;
+  }
+  return sortedYears[0][0];
 }
 
 // === TEST YOURSELF ===
