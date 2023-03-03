@@ -12,12 +12,12 @@ export function getPlanetNamesWithMassValue({
   planets: Planet[];
   greaterThanOrEqualTo: Number;
 }) {
-  return planets.reduce((acc, planet) => {
+  return planets.reduce<string[]>((acc, planet) => {
     if (planet.mass.massValue >= greaterThanOrEqualTo) {
       return [...acc, planet.name];
     }
     return acc;
-  }, [] as String[]);
+  }, []);
 }
 
 // === TEST YOURSELF ===

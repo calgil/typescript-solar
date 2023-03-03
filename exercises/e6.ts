@@ -7,12 +7,12 @@ export function getAsteroidsDiscoveredAfterYear(
   asteroids: Asteroid[],
   year: Number
 ) {
-  return asteroids.reduce((acc, asteroid) => {
+  return asteroids.reduce<Asteroid[]>((acc, asteroid) => {
     if (asteroid.discoveryYear > year) {
       return [...acc, asteroid];
     }
     return acc;
-  }, [] as Asteroid[]);
+  }, []);
 }
 
 // === TEST YOURSELF ===

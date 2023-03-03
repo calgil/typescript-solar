@@ -1,12 +1,7 @@
-type Person = {
-  name: string;
-  age: number;
-};
-
-export const minBy = (
-  array: unknown[],
-  cb: (input: unknown) => number | string
-) => {
+export function minBy<Type>(
+  array: Type[],
+  cb: (input: Type) => number | string
+) {
   let minValue;
   let min;
   for (let element of array) {
@@ -20,11 +15,11 @@ export const minBy = (
     }
   }
   return min;
-};
+}
 
-export function maxBy(
-  array: unknown[],
-  cb: (input: unknown) => number | string
+export function maxBy<Type>(
+  array: Type[],
+  cb: (input: Type) => number | string
 ) {
   let maxVal;
   let max;

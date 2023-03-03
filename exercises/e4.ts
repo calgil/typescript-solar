@@ -5,12 +5,12 @@
 import { Planet } from "../data/data";
 
 export function getPlanetNamesWithLowGravity(planets: Planet[]) {
-  return planets.reduce((acc, planet) => {
+  return planets.reduce<string[]>((acc, planet) => {
     if (planet.gravity < 10) {
       return [...acc, planet.name];
     }
     return acc;
-  }, [] as String[]);
+  }, []);
 }
 
 // === TEST YOURSELF ===
